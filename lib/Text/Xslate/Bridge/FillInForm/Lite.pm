@@ -24,11 +24,15 @@ Text::Xslate::Bridge::FillInForm::Lite - HTML::FillInForm::Lite 'fillinform' for
 =head1 SYNOPSIS
 
     use Text::Xslate;
-
     my $tx = Text::Xslate->new(
         module => ['Text::Xslate::Bridge::FillInForm::Lite'],
     );
-    
+
+    my %vars = (
+        q => { foo => "<filled value>" },
+    );
+    print $tx->render_string($tmpl, \%vars);
+
     # this is same as below
     use Text::Xslate;
     use HTML::FillInForm::Lite qw(fillinform);
@@ -36,6 +40,14 @@ Text::Xslate::Bridge::FillInForm::Lite - HTML::FillInForm::Lite 'fillinform' for
     my $tx = Text::Xslate->new(
         function => { fillinform => html_builder(\&fillinform) },
     );
+
+    # in your template
+    : block form | fillinform($q) -> {
+    <form action="">
+        <input name="foo" type="" tyep="text" />
+        <textarea id="" name="bar" rows="10" cols="30"></textarea>
+    </form>
+    : }
 
 =head1 DESCRIPTION
 
