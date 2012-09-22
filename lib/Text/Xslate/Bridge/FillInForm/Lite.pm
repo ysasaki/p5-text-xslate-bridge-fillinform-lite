@@ -8,7 +8,7 @@ use base qw(Text::Xslate::Bridge);
 use Text::Xslate qw(html_builder);
 use HTML::FillInForm::Lite qw(fillinform);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 # copied from Text/Xslate/Manual/Cookbook.pod#Using_FillInForm
 __PACKAGE__->bridge(
@@ -60,14 +60,13 @@ L<Text::Xslate>, L<HTML::FillInForm::Lite>, L<Dancer::Template::Xslate>
 
 =head1 AUTHOR
 
-Yoshihiro Sasaki, E<lt>ysasaki at cpan.orgE<gt>
+Yoshihiro Sasaki E<lt>ysasaki at cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
 Copyright (C) 2012 by Yoshihiro Sasaki
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.14.2 or,
-at your option, any later version of Perl 5 you may have available.
+it under the same terms as Perl itself.
 
 =cut
