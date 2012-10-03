@@ -8,7 +8,7 @@ use base qw(Text::Xslate::Bridge);
 use Text::Xslate qw(html_builder);
 use HTML::FillInForm::Lite qw(fillinform);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # copied from Text/Xslate/Manual/Cookbook.pod#Using_FillInForm
 __PACKAGE__->bridge(
@@ -20,6 +20,18 @@ __END__
 =head1 NAME
 
 Text::Xslate::Bridge::FillInForm::Lite - HTML::FillInForm::Lite 'fillinform' for Text::Xslate
+
+=head1 DEPRECATED
+
+B<This module is deprecated>. You should use L<Text::Xslate> (ver 1.5018 or higher) and it's C<html_builder_module> option instead. Functions with this option are wrapped by C<html_builder()>. You need to use this module no longer!
+
+    # example for using fillinform
+    use Text::Xslate;
+    my $tx = Text::Xslate->new(
+        html_builder_module => ['HTML::FillInForm::Lite' => ['fillinform']]
+    );
+
+See L<Text::Xslate> and L<Text::Xslate::Manual::Cookbook> for more details.
 
 =head1 SYNOPSIS
 
